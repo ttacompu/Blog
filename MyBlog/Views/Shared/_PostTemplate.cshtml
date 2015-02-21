@@ -1,0 +1,21 @@
+﻿@model BlogDataModel.Post
+<p class="lead"><a href="#">@Model.Title</a></p>
+<p><span class="glyphicon glyphicon-time"></span>&nbsp;Posted on @Model.PostedOn</p>
+<p>Category :  <span>@Html.CategoryLink(Model.Category)</span></p>
+<p>Tags :  <span>@Helpers.Tags(Html, Model.Tags)</span></p>
+
+<p><input type="text" id="first" data-label="your first name" class="wmark"/></p>
+
+@if (@Model.IsImageInclude)
+{
+    <img src="@Model.ImageLink" class="img-responsive">
+    <hr>
+}
+<p>
+    @Model.ShortDescription
+</p>
+
+<p>Category</p>
+<a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+<hr />

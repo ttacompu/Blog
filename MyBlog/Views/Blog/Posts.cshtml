@@ -1,0 +1,22 @@
+﻿@model MyBlog.Models.PostListViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Posts";
+}
+
+@if (Model.Posts.Count > 0)
+{
+    foreach (var post in Model.Posts)
+    {
+    @Html.Partial("_PostTemplate", post)
+    }
+}
+else
+{
+    <p>No posts found!</p>
+}
+
+@Html.Partial("_Pager", Model)
+
+
